@@ -1,0 +1,3322 @@
+#:import C kivy.utils.get_color_from_hex
+<ScreenManagement>:
+    LoginWindow:
+    Register:
+    FirstScreen:
+    Screen_1:
+    Screen_2:
+    Screen_3:
+    Screen_4:
+    Prediect:
+    RefrenceScreen:
+
+
+<LoginWindow>:
+    name: 'Login'
+
+    username_input: username_input
+    password_input: password_input
+    error_1 : error_1
+
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            #Image:
+
+
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+
+
+
+
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    size: 350,60
+                    pos: 0,620
+                Line:
+                    width: 2
+                    rectangle: .1, 85, 350, 460   #self.x, self.y, self.width, self.height
+
+
+
+
+            Label:
+                text: 'Login'
+                font_size: 25
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+            #Image:
+                #source:'icon.png'
+                #pos: 100, 500
+
+
+            Label:
+                text: 'Username'
+                color: C("#642934")
+                font_size: 20
+                #source:"icon.png"
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 120
+                center_y: 498
+
+            TextInput:
+                #hint_text: "username"
+                border: .80,.80,.80,.80
+                text_size: 40
+                #Border: (20,10,30,10)
+                #color: C('#deaeb7')
+                angle_start:180
+                angle_end:360
+                id: username_input
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+
+                font_size: 20
+                multiline: False
+                center_x: 125
+                center_y: 450
+                height: 50
+                width: 50
+                size_hint: .6,.5 #width , hieght
+                #size: (10,10)
+                multiline: False
+
+
+                #Widget:
+                canvas:
+                    Color:
+                        rgb: (0, 1, 0, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+#############################
+            Label:
+                text: 'Password'
+                color: C("#642934")
+                font_size: 20
+                text_size: self.size
+                #valign: 'middle'
+                #color: [0.0,0.0,0.0,0.4]
+                center_x:120
+                center_y:420
+
+            TextInput:
+                id: password_input
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                multiline: False
+                center_x: 125
+                center_y: 370
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                password: True
+
+
+
+        ############################
+
+            Label:
+                text: ''
+                id:error_1
+                color: 1, 0, 0, 1
+                font_size: 15
+                text_size: self.size
+                #valign: 'middle'
+                #color: [0.0,0.0,0.0,0.4]
+                center_x:120
+                center_y:320
+
+        ############################
+
+            Button:
+
+                size: 100, 100
+                #font: '50dp'
+                font_size: 10
+                text: 'SignUp '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'register'
+
+
+            Button:
+                text: " Login"
+                font_size: 20
+
+                on_release:root.Login_pressed()
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,200
+                height: 20
+                width: 300
+
+########################
+
+<Register>:
+    username_input: username_input
+    email_input: email_input
+    password_input: password_input
+    con_email:con_email
+    error:error
+
+    name: 'register'
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            #Image:
+
+        #Line:
+            #size: 30
+            #width: 1.
+            #rectangle: 10, 300, 700, 900   #self.x, self.y, self.width, self.height
+            #dash_offset: 5
+            #dash_length: 3
+            #color: [0.0,0.0,0.0,0.4]
+        #Color:
+            #rgb: .1, .1, 1, .9
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+
+        #BoxLayout:
+            #padding: 6
+            #spacing: 3
+            #size_hint_y: None
+    #TabbedPanelItem:
+        #Widget:
+            #canvas.after:
+                #Color:
+                    #rgb: C ("#d3b097") [3] #BackTitle
+                #Rectangle:
+                    #size: self.size
+                    #pos: 1,1280
+
+
+
+
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,60
+                    pos: 0,620
+                    #size: 30
+                    #rectangle: 20, 200, 700, 900   #self.x, self.y, self.width, self.height
+                    #dash_offset: 5
+                    #dash_length: 3
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: .1, 85, 350, 460   #self.x, self.y, self.width, self.height
+            #dash_offset: 5
+            #dash_length: 3
+            #color: [0.0,0.0,0.0,0.4]
+                #Color:
+                    #rgb: .1, .1, 1, .9
+
+
+            Label:
+                text: 'Register'
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+            Label:
+                text: 'Username'
+                text_size: self.size
+                #valign: 'middle'
+                color: C("#642934")
+                font_size: 20
+                center_x: 120
+                center_y: 540
+
+            TextInput:
+                #hint_text: "Username"
+                border: .80,.80,.80,.80
+                text_size: 40
+                #Border: (20,10,30,10)
+                #color: [3.0,6.0,5.0,4.15]
+                angle_start:180
+                angle_end:360
+                id: username_input
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+
+                font_size: 20
+                multiline: False
+                center_x: 125
+                center_y: 490
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                #size: (10,10)
+                multiline: False
+
+
+                #Widget:
+                canvas:
+                    Color:
+                        rgb: (0, 1, 0, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+#############################
+
+            Label:
+                text: 'Email'
+                text_size: self.size
+                #valign: 'middle'
+                color: C("#642934")
+                font_size: 20
+                center_x:120
+                center_y:460
+
+            TextInput:
+                id: email_input
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                multiline: False
+                center_x: 125
+                center_y: 410
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+
+
+        ############################
+
+
+            Label:
+                text: 'Confirm email'
+                text_size: self.size
+                #valign: 'middle'
+                color: C("#642934")
+                font_size: 20
+                center_x:120
+                center_y:380
+
+            TextInput:
+                id: con_email
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                #multiline: False
+                multiline: False
+                center_x: 125
+                center_y: 330
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+
+
+          ############################
+            Label:
+                text: 'Password'
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                color: C("#642934")
+                font_size: 20
+                center_x:120
+                center_y:295
+
+            TextInput:
+                id: password_input
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                multiline: False
+                multiline: False
+                center_x: 125
+                center_y: 245
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                multiline: False
+                password: True
+
+#############################
+
+            Label:
+
+                text_size: self.size
+                #valign: 'middle'
+                id:error
+                #color: C("#642934")
+                color: 1, 0, 0, 1
+                font_size: 15
+                center_x:110
+                center_y:220
+                height: 100
+                width: 100
+
+############################
+
+            Button:
+
+                size: 100, 100
+                #font: '50dp'
+                font_size: 10
+                text: 'Login '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'Login'
+
+
+            Button:
+
+                text: 'Sign up '
+                font_size: 20
+                id:next_2
+                size_hint:.9,.9
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                pos:80,120
+                size_hint:.6,.5
+
+                height: 20
+                width: 300
+                on_press: root.register_pressed()
+                #on_release: app.root.current = 'screen_1'
+                #size_hint: .3,.1 #width , hieght
+                #size_hint_x: 0.25
+                #size_hint_y: None
+                #height: 30
+                #pos_hint: {'right': 1, 'bottom': 1}
+
+
+########################
+
+<FirstScreen>:
+    name: "screen_1"
+    sym_text: sym_text
+    #symp_input:symp_input
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: .1, 200, 350, 300   #self.x, self.y, self.width, self.height
+
+            Label:
+                text: 'Symptoms'
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 80
+                center_y: 680
+
+
+            Label:
+                text: "Select What you Feel  :"
+                #size_hint_x: 1
+                color: 0,0,0,1
+                #center_x: (root.width/2)
+                #top: (root.top/2) + 700
+                pos: 100, 1060
+
+            Spinner:
+                center_x: 50
+                center_y:560
+                #pos: 40, 200
+                background_color: 1, .3, .4, .85
+                size_hint:1,.5 #width , hieght
+                id: sym_text
+                #size_hint: 1,.3
+                font_size: 18
+                on_text: root.spinner_clicked(sym_text.text)
+                text:'Select What you Feel :'
+                #values:symp_arr
+                values: ['Abnormal vaginal bleeding', 'bleeding after menopause', 'periods that are longer than usual' ,'periods that are heavier than usual' , 'Bleeding after douching ','Bleeding after a pelvic exam','An unusual discharge from the vagina','Pain during sex','pain in your lower back','severe pain in your side caused by your kidneys','severe pain in your back caused by your kidneys','constipation','losing control of your bladder (UI)','losing control of your bowels','blood in your pee']
+            Label:
+                id: sym_label
+                font_size: 15
+                text: "  "
+                color: 0,0,0,1
+                center_x: 56
+                center_y:400
+
+            Image:
+                source: 'cervical-cancer.png'
+
+
+
+            Button:
+                #size_hint: 1,.5 #width , hieght
+                text: " Next "
+                font_size: 20
+                size_hint:.6,.5
+                pos:90,80
+                height: 20
+                width: 300
+                background_color: 1, .3, .4, .85
+                canvas.before:
+                    Color:
+                        rgba: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#642a35')
+                    Line:
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: 2
+                        #rectangle: self.x, self.y, self.width, self.height
+                        #Line:
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 2
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                on_release: root.encoding()
+                # on_release: app.root.current = 'prediect'
+                on_release: app.root.current = 'screen'
+
+
+            Button:
+                #size_hint: .5,.5 #width , hieght
+                id: del_button
+                size_hint:.6,.5
+                pos:90,20
+                height: 20
+                width: 300
+                background_color: 1, .3, .4, .85
+                canvas.before:
+                    Color:
+                        rgba: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#642a35')
+                    Line:
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: 2
+                        #rectangle: self.x, self.y, self.width, self.height
+                        #Line:
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 2
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                text: "Delete"
+                #font_size: 20
+                border: 20,10,10,10
+                #markup: True
+                on_release:root.delete_button()
+
+
+#############################################################################################
+
+<Screen_1>:
+
+    name: "screen"
+    tinput_age:tinput_age
+    tinput_24:tinput_24
+    tinput_25:tinput_25
+    chk_yes:chk_yes
+    tinput_preg:tinput_preg
+    chk_no:chk_no
+    tinput_year:tinput_year
+
+
+
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        #Image:
+            #source:"/Users/sundus/Desktop/Malikah/xxxhdpi/Group.png"
+
+        #Line:
+            #size: 30
+            #width: 1.
+            #rectangle: 10, 300, 700, 900   #self.x, self.y, self.width, self.height
+            #dash_offset: 5
+            #dash_length: 3
+            #color: [0.0,0.0,0.0,0.4]
+        #Color:
+            #rgb: .1, .1, 1, .9
+        #Image:
+            #source:"/Users/sundus/Desktop/Malikah/xxxhdpi/Group.png"
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+
+        #BoxLayout:
+            #padding: 6
+            #spacing: 3
+            #size_hint_y: None
+    #TabbedPanelItem:
+        #Widget:
+            #canvas.after:
+                #Color:
+                    #rgb: C ("#d3b097") [3] #BackTitle
+                #Rectangle:
+                    #size: self.size
+                    #pos: 1,1280
+
+
+
+
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+                    #size: 30
+                    #rectangle: 20, 200, 700, 900   #self.x, self.y, self.width, self.height
+                    #dash_offset: 5
+                    #dash_length: 3
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: .1, 110, 350, 500   #self.x, self.y, self.width, self.height
+
+            #dash_offset: 5
+            #dash_length: 3
+            #color: [0.0,0.0,0.0,0.4]
+                #Color:
+                    #rgb: .1, .1, 1, .9
+
+            #Image:
+                #source:"iconProfile.png"
+
+            Label:
+                text: 'General Information'
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+
+
+            Label:
+                text: 'Write your age'
+                font_size: 17
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                color: C("#642934")
+                center_x: 100
+                center_y: 620
+
+            TextInput:
+                #hint_text: "Write your age"
+                border: .80,.80,.80,.80
+                text_size: 40
+                #Border: (20,10,30,10)
+                #color: [3.0,6.0,5.0,4.15]
+                angle_start:180
+                angle_end:360
+                id: tinput_age
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+
+                font_size: 20
+                multiline: False
+                center_x: 120
+                center_y: 570
+                height: 50
+                width: 50
+                size_hint: .6,.5 #width , hieght
+                #size: (10,10)
+                multiline: False
+                input_type :'number'
+                input_filter :'int'
+
+                #Widget:
+                canvas:
+                    Color:
+                        rgb: (0, 1, 0, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+#############################
+
+            Label:
+                text: 'Number of sexual partners per month '
+                font_size: 17
+                text_size: self.size
+                #valign: 'middle'
+                color: C("#642934")
+                center_x:100
+                center_y:540
+
+            TextInput:
+                id: tinput_24
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                multiline: False
+                center_x: 120
+                center_y: 490
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+
+
+        ############################
+            Label:
+                text: 'First sexual intercourse'
+                font_size: 17
+                text_size: self.size
+                #valign: 'middle'
+                color: C("#642934")
+                center_x:100
+                center_y:460
+
+            TextInput:
+                id: tinput_25
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                #multiline: False
+                multiline: False
+                center_x: 120
+                center_y: 410
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+
+
+          ############################
+
+            Label:
+                text: 'How many numbers will pregnancies?'
+                font_size: 17
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                color: C("#642934")
+                center_x:100
+                center_y:380
+
+            TextInput:
+                id: tinput_preg
+                font_size: 20
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                multiline: False
+                multiline: False
+                center_x: 120
+                center_y: 330
+                size_hint: .6,.5 #width , hieght
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                input_filter :'int'
+
+#############################
+
+            Label:
+                text: 'Are you smoking?'
+                font_size: 20
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                color: C("#642934")
+                center_x:100
+                center_y:290
+
+
+            Label:
+                text: 'Yes'
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                color: C("#642934")
+                center_x:100
+                center_y:270
+
+            RelativeLayout:
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_3'
+                    center_x:150
+                    center_y:270
+                    text: "Yes"
+                    id : chk_yes
+                    on_active:
+                        root.Question_3 = self.text
+                CheckBox:
+                    group: 'check_3'
+                    center_x:280
+                    center_y:270
+                    text: "No"
+                    id : chk_no
+                    on_active:
+                        root.Question_3 = self.text
+
+
+            Label:
+                text: 'No'
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                color: C("#642934")
+                center_x:250
+                center_y:270
+
+##############################################
+            Label:
+                text: 'How many years you smoking'
+                font_size: 18
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                color: C("#642934")
+                center_x:100
+                center_y:230
+
+            TextInput:
+                id: tinput_year
+                font_size: 20
+                multiline: False
+                size_hint: .6,.5 #width , hieght
+                center_x:120
+                center_y:180
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                multiline: False
+                #Line: 10, 20
+                multiline: False
+                input_type :'number'
+                #if check no disabled text input
+                disabled: not chk_yes.active
+
+
+########################
+            Label:
+                text: ''
+                center_x:130
+                center_y:160
+                id: error_1
+                text_size: self.size
+                #valign: 'middle'
+                font_size: 17
+                color: 1, 0, 0, 1
+
+#################################
+
+            Button:
+
+                size: 100, 100
+                font: '50dp'
+                text: '< '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'screen_1'
+
+            Button:
+                #border: .80,.80,.80,.80
+                markup: True
+                size: 100, 100
+                text: 'Next'
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#642a35')
+                    Line:
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: 2
+                        #rectangle: self.x, self.y, self.width, self.height
+                        #Line:
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 2
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                background_color: 1, .3, .4, .85
+                size_hint:.6,.5
+                pos:80,50
+                height: 20
+                width: 300
+                id:next_1
+
+                on_press:root.add_results()
+                #on_release: app.root.current = 'screen_2'
+
+#############################################################################################
+
+<Screen_2>:
+    name: "screen_2"
+    tinput_year_6: tinput_year_6
+    chk17:chk17
+    chk27:chk27
+    tinput_year_8:tinput_year_8
+    chk29:chk29
+    tinput_year_10:tinput_year_10
+    chk19:chk19
+    chk25:chk25
+    chk15:chk15
+
+
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+####################################################################################
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+                    #size: 30
+                    #rectangle: 20, 200, 700, 900   #self.x, self.y, self.width, self.height
+                    #dash_offset: 5
+                    #dash_length: 3
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: .1, 110, 350, 500   #self.x, self.y, self.width, self.height
+
+            Label:
+                text: 'Contraceptive '
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+
+            Label:
+                text: 'Do you have Hormonal Contraceptives?'
+                text_size: self.size
+                #valign: 'middle'
+                font_size: 17
+                #position: 0,0
+                #size_hint:1,1
+                color: C("#642934")
+                center_x: 100
+                center_y: 630
+
+            Label:
+                text: 'Yes'
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 18
+                color: C("#642934")
+                center_x:100
+                center_y:600
+
+
+            RelativeLayout:
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_5'
+                    center_x:150
+                    center_y:600
+                    text: "Yes"
+                    #value:'1'
+                    id : chk15
+                    on_active:
+                        root.Question_5 = self.text
+                CheckBox:
+                    group: 'check_5'
+                    center_x:280
+                    center_y:600
+                    text: "No"
+                    #value:'0'
+                    id : chk25
+                    on_active:
+                        root.Question_5 = self.text
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:560
+                font_size: 18
+                text_size: self.size
+                valign: 'middle'
+                id:op112
+                color: C("#642934")
+
+                ########################################
+
+            Label:
+                text: 'How many years use Hormonal Contraceptives?'
+                text_size: self.size
+                #valign: 'middle'
+                font_size: 17
+                id:op12
+                color: C("#642934")
+                center_x:100
+                center_y:540
+
+            TextInput:
+                id: tinput_year_6
+                font_size: 20
+                multiline: False
+                center_x: 120
+                center_y: 490
+                size_hint: .6,.5 #width , hieght
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+
+
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+                #if check no disabled text input
+                disabled: not chk15.active
+
+
+                ########################################
+
+            Label:
+                text: 'Do you use IUD?'
+
+                text_size: self.size
+                valign: 'middle'
+                position: 0,0
+                size_hint:1,1
+                color: C("#642934")
+                font_size: 17
+                center_x:100
+                center_y:410
+
+            Label:
+                text: 'Yes'
+                font_size: 18
+                center_x: 96
+                center_y: 380
+                text_size: self.size
+                valign: 'middle'
+                id:op111
+                color: C("#642934")
+                #color: [0.0,0.0,0.0,0.4]
+
+            RelativeLayout:
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_7'
+                    center_x: 120
+                    center_y: 410
+                    value:'1'
+                    text: "Yes"
+                    id : chk17
+                    on_active:
+                        root.Question_7 = self.text
+                CheckBox:
+                    group: 'check_7'
+                    center_x: 280
+                    center_y: 410
+                    text: "No"
+                    value:'0'
+                    id : chk27
+                    on_active:
+                        root.Question_7 = self.text
+            Label:
+                text: 'No'
+                font_size: 18
+                center_x: 250
+                center_y: 380
+                text_size: self.size
+                valign: 'middle'
+                id:op112
+                color: C("#642934")
+                #color: [0.0,0.0,0.0,0.4]
+
+            Label:
+                text: 'How many years use IUD?'
+                font_size: 17
+                color: C("#642934")
+                center_x:100
+                center_y:380
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                #color: [0.0,0.0,0.0,0.4]
+
+            TextInput:
+                id: tinput_year_8
+                font_size: 20
+                multiline: False
+                center_x: 120
+                center_y: 330
+                size_hint: .6,.5 #width , hieght
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+                #if check no disabled text input
+                disabled: not chk17.active
+
+
+#####################################################################
+            Label:
+                text: 'Do you have STDs?'
+                font_size: 20
+                color: C("#642934")
+                center_x:100
+                center_y:290
+                text_size: self.size
+                #valign: 'middle'
+                position: 0,0
+                size_hint:1,1
+
+
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:270
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 18
+                color: C("#642934")
+
+            RelativeLayout:
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_9'
+                    center_x:150
+                    center_y:270
+                    text: "Yes"
+                    id : chk19
+                    on_active:
+                        root.Question_9 = self.text
+                CheckBox:
+                    group: 'check_9'
+                    center_x:280
+                    center_y:270
+                    text: "No"
+                    id : chk29
+                    on_active:
+                        root.Question_9 = self.text
+            Label:
+                text: 'No'
+                #center_x:250
+                #center_y:280
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 18
+                color: C("#642934")
+                center_x:250
+                center_y:270
+            Label:
+                text: 'How many years have STDs?'
+                center_x:100
+                center_y:230
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                font_size: 18
+                color: C("#642934")
+
+            TextInput:
+                id: tinput_year_10
+                font_size: 20
+                multiline: False
+                center_x:120
+                center_y:180
+                size_hint: .6,.5 #width , hieght
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+                #if check no disabled text input
+                disabled: not chk19.active
+
+            ########################
+            Label:
+                text: ''
+                center_x:130
+                center_y:160
+                id: error_2
+                text_size: self.size
+                #valign: 'middle'
+                font_size: 17
+                color: 1, 0, 0, 1
+
+
+
+
+#####################################################################
+            Button:
+                size: 100, 100
+                font: '50dp'
+                text: '< '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'screen'
+
+            Button:
+                text: 'Next'
+                id:next_2
+                size_hint:.9,.9
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,50
+                height: 20
+                width: 300
+                on_press:root.add_results()
+                #on_release: app.root.current = 'screen_3'
+                #size_hint: .3,.1 #width , hieght
+                #size_hint_x: 0.25
+                #size_hint_y: None
+                #height: 30
+                #pos_hint: {'right': 1, 'bottom': 1}
+
+#############################################################################################
+
+<Screen_3>:
+
+    name: "screen_3"
+    chk1_122:chk1_122
+    chk1_111:chk1_111
+    chk126:chk126
+    chk116:chk116
+    chk115:chk115
+    chk125:chk125
+    chk1_114:chk1_114
+    chk1_124:chk1_124
+    chk1_113:chk1_113
+    chk1_123:chk1_123
+    chk2_102:chk2_102
+    chk1_101:chk1_101
+    error_3 : error_3
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+####################################################################################
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: .1, 110, 350, 500   #self.x, self.y, self.width, self.height
+
+            Label:
+                text: 'Sexually transmitted diseases'
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+
+
+            Label:
+                text: 'Do you have condylomatosis?'
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 17
+                color: C("#642934")
+                center_x: 100
+                center_y: 620
+            Label:
+                text: 'Yes'
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 17
+                color: C("#642934")
+                center_x: 100
+                center_y: 600
+
+            RelativeLayout:                 ########## 1
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_11'
+                    center_x:150
+                    center_y:600
+                    text: "Yes"
+                    id : chk1_111
+                    on_active:
+                        root.Question_11 = self.text
+
+                CheckBox:
+                    group: 'check_11'
+                    center_x:280
+                    center_y:600
+                    text: "No"
+                    id : chk1_122
+                    on_active:
+                        root.Question_11 = self.text
+            Label:
+                text: 'No'
+                font_size: 17
+                color: C("#642934")
+                center_x: 250
+                center_y: 600
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                #color: [0.0,0.0,0.0,0.4]
+
+            ##############################################
+            Label:
+                text:'Do you have cervical condylomatosis?'
+                text_size: self.size
+                font_size: 17
+                center_x:100
+                center_y:560
+                #valign: 'middle'
+                position: 0,0
+                size_hint:1,1
+                color: C("#642934")
+
+
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:540
+                text_size: self.size
+                #valign: 'middle'
+                id:op11
+                font_size: 17
+                color: C("#642934")
+
+            RelativeLayout:                 ######## 2
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_12'
+                    center_x:150
+                    center_y:540
+                    text: "Yes"
+                    id : chk1_101
+                    on_active:
+                        root.Question_12 = self.text
+
+                CheckBox:
+                    group: 'check_12'
+                    center_x:280
+                    center_y:540
+                    text: "No"
+                    id : chk2_102
+                    on_active:
+                        root.Question_12 = self.text
+
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:540
+                text_size: self.size
+                #valign: 'middle'
+                id:op12
+                font_size: 17
+                color: C("#642934")
+        ############################################################
+
+            Label:
+                text: 'Do you have vaginal condylomatosis?'
+                center_x:100
+                center_y:490
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 17
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:430
+                text_size: self.size
+                valign: 'middle'
+                id:op111
+                font_size: 17
+                color: C("#642934")
+
+            RelativeLayout:                     ########### 3
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_13'
+                    center_x:150
+                    center_y:460
+                    text: "Yes"
+                    id : chk1_113
+                    on_active:
+                        root.Question_13 = self.text
+
+                CheckBox:
+                    group: 'check_13'
+                    center_x:280
+                    center_y:460
+                    text: "No"
+                    id : chk1_123
+                    on_active:
+                        root.Question_13 = self.text
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:430
+                text_size: self.size
+                valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+            #########################################################
+
+            Label:
+                text: 'Do you have vulvo-perineal condylomatosis?'
+                center_x:100
+                center_y:420
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 15
+                color: C("#642934")
+
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:400
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 17
+                color: C("#642934")
+
+            RelativeLayout:                     ########## 4
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 470
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_14'
+                    center_x:150
+                    center_y:400
+                    text: "Yes"
+                    id : chk1_114
+                    on_active:
+                        root.Question_14 = self.text
+
+                CheckBox:
+                    group: 'check_14'
+                    center_x:280
+                    center_y:400
+                    text: "No"
+                    id : chk1_124
+                    on_active:
+                        root.Question_14 = self.text
+
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:400
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+
+                ####################################################
+
+            Label:
+                text: 'Do you have syphilis?'
+                center_x:100
+                center_y:360
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 17
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:300
+                text_size: self.size
+                valign: 'middle'
+                id:op111
+                font_size: 17
+                color: C("#642934")
+
+
+            RelativeLayout:                         ########### 5
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_15'
+                    center_x:150
+                    center_y:330
+                    text: "Yes"
+                    id : chk115
+                    on_active:
+                        root.Question_15 = self.text
+                CheckBox:
+                    group: 'check_15'
+                    center_x:280
+                    center_y:330
+                    text: "No"
+                    id : chk125
+                    on_active:
+                        root.Question_15 = self.text
+
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:330
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+##############################################################################
+
+            Label:
+                text: 'Do you have pelvic inflammatory disease?'
+                center_x:100
+                center_y:290
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 15
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:230
+                text_size: self.size
+                valign: 'middle'
+                id:op111
+                font_size: 15
+                color: C("#642934")
+
+            RelativeLayout:                         ########## 6
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_16'
+                    center_x:150
+                    center_y:260
+                    text: "Yes"
+                    id : chk116
+                    on_active:
+                        root.Question_16 = self.text
+                CheckBox:
+                    group: 'check_16'
+                    center_x:280
+                    center_y:260
+                    text: "No"
+                    id : chk126
+                    on_active:
+                        root.Question_16 = self.text
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:260
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+
+                ###############################################################
+
+            Label:
+                text: ''
+                center_x:120
+                center_y:200
+                id: error_3
+                text_size: self.size
+                #valign: 'middle'
+                font_size: 17
+                color: 1, 0, 0, 1
+
+###############################################################
+
+
+            Button:
+
+                size: 100, 100
+                font: '50dp'
+                text: '< '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'screen'
+
+
+            Button:
+                text: 'Next'
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,50
+                height: 20
+                width: 300
+                id:next_3
+                on_press:root.add_results()
+                #on_release: app.root.current = 'screen_4'
+                #size_hint: .4,.9 #width , hieght
+
+
+#############################################################################################
+
+<Screen_4>:
+
+    name: "screen_4"
+    chk117:chk117
+    chk127:chk127
+    tinput_23:tinput_23
+    chk122:chk122
+    chk222:chk222
+    chk111:chk111
+    chk121:chk121
+    chk110:chk110
+    chk120:chk120
+    chk119:chk119
+    chk129:chk129
+    chk128:chk128
+    chk118:chk118
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+####################################################################################
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: .1, 110, 350, 500   #self.x, self.y, self.width, self.height
+
+            Label:
+                text: 'Sexually transmitted diseases'
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+
+            Label:
+                text: 'Do you have genital herpes?'
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 18
+                color: C("#642934")
+                center_x: 100
+                center_y: 630
+            Label:
+                text: 'Yes'
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 17
+                color: C("#642934")
+                center_x: 100
+                center_y: 600
+
+            RelativeLayout:                 ########## 1
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_17'
+                    center_x:150
+                    center_y:600
+                    text: "Yes"
+                    id : chk117
+                    on_active:
+                        root.Question_17 = self.text
+                CheckBox:
+                    group: 'check_17'
+                    center_x:280
+                    center_y:600
+                    text: "No"
+                    id : chk127
+                    on_active:
+                        root.Question_17 = self.text
+            Label:
+                text: 'No'
+                center_x: 250
+                center_y: 560
+                text_size: self.size
+                valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+
+
+
+###########################################################################         1111
+
+
+
+            Label:
+                text: 'Do you have molluscum contagiosum?'
+                center_x:100
+                center_y:560
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 17
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:530
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 17
+                color: C("#642934")
+
+            RelativeLayout:                 ######## 2
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_18'
+                    center_x:150
+                    center_y:530
+                    text: "Yes"
+                    id : chk118
+                    on_active:
+                        root.Question_18 = self.text
+                CheckBox:
+                    group: 'check_18'
+                    center_x:280
+                    center_y:530
+                    text: "No"
+                    id : chk128
+                    on_active:
+                        root.Question_18 = self.text
+
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:530
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 18
+                color: C("#642934")
+
+
+
+
+
+################################################################################    22222
+
+            Label:
+                text: 'Do you have AIDS?'
+                center_x:100
+                center_y:490
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                font_size: 18
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:460
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 18
+                color: C("#642934")
+
+            RelativeLayout:                 ######## 3
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+
+
+                CheckBox:
+                    group: 'check_19'
+                    center_x:150
+                    center_y:460
+                    text: "Yes"
+                    id : chk119
+                    on_active:
+                        root.Question_19 = self.text
+                CheckBox:
+                    group: 'check_19'
+                    center_x:280
+                    center_y:460
+                    text: "No"
+                    id : chk129
+                    on_active:
+                        root.Question_19 = self.text
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:460
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 18
+                color: C("#642934")
+
+###############################################################   3333
+
+
+            Label:
+                text: 'Do you have HIV?'
+                center_x:100
+                center_y:420
+                text_size: self.size
+                #valign: 'middle'
+                position: 0,0
+                size_hint:1,1
+                font_size: 18
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:390
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                font_size: 18
+                color: C("#642934")
+
+
+            RelativeLayout:                     ########## 4
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_20'
+                    center_x:150
+                    center_y:390
+                    text: "Yes"
+                    id : chk110
+                    on_active:
+                        root.Question_20 = self.text
+
+                CheckBox:
+                    group: 'check_20'
+                    center_x:280
+                    center_y:390
+                    text: "No"
+                    id : chk120
+                    on_active:
+                        root.Question_20 = self.text
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:390
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+
+
+##########################################################################    44444
+
+            Label:
+                text: 'Do you have Hepatitis B?'
+                center_x:100
+                center_y:360
+                font_size: 18
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                color: C("#642934")
+            Label:
+                text: 'Yes'
+                center_x:100
+                center_y:330
+                font_size: 17
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                color: C("#642934")
+
+            RelativeLayout:                     ########## 5
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_21'
+                    center_x:150
+                    center_y:330
+                    text: "Yes"
+                    id : chk111
+                    on_active:
+                        root.Question_21 = self.text
+
+                CheckBox:
+                    group: 'check_21'
+                    center_x:280
+                    center_y:330
+                    text: "No"
+                    id : chk121
+                    on_active:
+                        root.Question_21 = self.text
+            Label:
+                text: 'No'
+                center_x:250
+                center_y:330
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                font_size: 17
+                color: C("#642934")
+
+
+
+################################################################################## 555555
+            Label:
+                text: 'Do you have HPV?'
+                color: C("#642934")
+                font_size: 20
+                center_x:100
+                center_y:290
+                text_size: self.size
+                #valign: 'middle'
+                #position: 0,0
+                size_hint:1,1
+                #color: [0.0,0.0,0.0,0.4]
+            Label:
+                text: 'Yes'
+                color: C("#642934")
+                center_x:100
+                center_y:270
+                text_size: self.size
+                #valign: 'middle'
+                id:op111
+                #color: [0.0,0.0,0.0,0.4]
+
+            RelativeLayout:                         ########## 6
+                orientation:'vertical'
+                size_hint: 0.100, 0.2
+                spacing: 100
+                padding: 360
+                pos: self.pos
+                #pos_hint: {'center_x': .1, 'center_y': .4}
+
+                CheckBox:
+                    group: 'check_22'
+                    center_x:150
+                    center_y:270
+                    text: "Yes"
+                    id : chk122
+                    on_active:
+                        root.Question_22 = self.text
+                CheckBox:
+                    group: 'check_22'
+                    center_x:280
+                    center_y:270
+                    text: "No"
+                    id : chk222
+                    on_active:
+                        root.Question_22 = self.text
+
+            Label:
+                text: 'No'
+                color: C("#642934")
+                center_x:250
+                center_y:270
+                text_size: self.size
+                #valign: 'middle'
+                id:op112
+                #color: [0.0,0.0,0.0,0.4]
+
+
+
+        ############################
+
+
+            Label:
+                text: 'Number of diagnosis HPV'
+                text_size: self.size
+                font_size: 18
+                #valign: 'middle'
+                color: C("#642934")
+                center_x:100
+                center_y:230
+
+            TextInput:
+                id: tinput_23
+                font_size: 20
+                multiline: False
+                size_hint: .6,.5 #width , hieght
+                center_x:120
+                center_y:180
+                color: [0.0,0.0,0.0,0.4]
+                background_color: C('#f4e5e4')
+                canvas.before:
+
+                    Color:
+                        rgb: C('#f4e4e7')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+
+
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                height: 50
+                width: 50
+                multiline: False
+                input_type :'number'
+                #input_filter :'float'
+                #if check no disabled text input
+                disabled: not chk122.active
+
+             ########################
+            Label:
+                text: ''
+                center_x:130
+                center_y:160
+                id: error_4
+                text_size: self.size
+                #valign: 'middle'
+                font_size: 17
+                color: 1, 0, 0, 1
+
+
+
+
+############################
+
+            Button:
+
+                size: 100, 100
+                font: '50dp'
+                text: '< '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'screen'
+
+
+            Button:
+                text: 'Next'
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,50
+                height: 20
+                width: 300
+                id:next_5
+                #size_hint: .4,.9 #width , hieght
+                on_press:root.add_results()
+                #on_release: app.root.current = 'prediect'
+
+
+
+
+###########################
+<Prediect>:
+    name: "prediect"
+    result_input:result_input
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+####################################################################################
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+                    #size: 30
+                    #rectangle: 20, 200, 700, 900   #self.x, self.y, self.width, self.height
+                    #dash_offset: 5
+                    #dash_length: 3
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: 5, 270, 340, 200   #self.x, self.y, self.width, self.height
+
+
+
+            Label:
+                text: 'Result'
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+            Label:
+                text: 'The result is:'
+                font_size: '20dp'
+                id: result_label
+                text_size: self.size
+                #valign: 'middle'
+                color: C("#642934")
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 50
+                center_y: 530
+
+
+            TextInput:
+                id: result_input
+                text: " "
+                center_x: 100
+                center_y: 390
+                size_hint: .7,.7
+                background_color: [10,10,5,.1]
+                height: 50
+                width: 50
+                readonly: True
+
+
+
+            Button:
+
+                size: 100, 100
+                font: '50dp'
+                text: '< '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'screen_4'
+
+            Button:
+                text: 'Show'
+                id:next_5
+                on_press:root.pred_()
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,200
+                height: 20
+                width: 300
+
+                height: 30
+                #pos_hint: {'right': 1, 'bottom': 1}
+                pos_hint: {'left': 1, 'bottom': 1}
+
+            Button:
+                text: 'Next'
+                on_release: app.root.current = 'refrence'
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,50
+                height: 20
+                width: 300
+
+####################################
+
+<RefrenceScreen>:
+    name: "refrence"
+    sym_text: sym_text
+
+    canvas.before:
+        Color:
+            rgb: C ('#fcf7f8') #background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        padding: 6
+        spacing: 3
+        size_hint_y: None
+
+####################################################################################
+        RelativeLayout:
+            orientation: "vertical"
+            padding: 6
+            spacing: 20
+
+
+
+            canvas:
+                Color:
+                    rgb: C("#9a4059")
+
+                Rectangle:
+                    #size_hint:.3,.5
+                    size: 350,50
+                    pos: 0,620
+
+                Line:
+                    #size: 30
+                    width: 2
+                    rectangle: 5, 270, 340, 200   #self.x, self.y, self.width, self.height
+
+
+            Label:
+                text: 'Refrence '
+                font_size: '20dp'
+                text_size: self.size
+                #valign: 'middle'
+                #id:op12
+                color: [10,9,9,20]
+                #color: [0.0,0.0,0.0,0.4]
+                center_x: 100
+                center_y: 680
+
+
+            Label:
+                #id: sym_label
+                color: [0.0,0.0,0.0,0.6]
+                font_size: '17dp'
+                center_x: -50
+                center_y: 500
+
+            Spinner:
+                center_x: 50
+                center_y:540
+                background_color: 1, .3, .4, .85
+                id: sym_text
+                font_size: '25dp'
+                size_hint:1,.5 #width , hieght
+                on_text: root.spinner_clicked(sym_text.text)
+                text: "Select your City: "
+                #values:symp_arr
+                values: ['Qassim','Riyadh','Jeddah']
+
+            Label:
+                id: sym_label
+                color: [0.0,0.0,0.0,0.6]
+                text: "  "
+                #color: 0,0,0,1
+                center_x: 60
+                center_y: 400
+     #######################################
+
+
+
+
+            Button:
+
+                size: 100, 100
+                font: '50dp'
+                text: '< '
+                background_color: 1, .3, .4, .85
+                id:next_1
+                size_hint:.1,.6
+                pos:0,620
+                height: 30
+                width: 300
+                #on_press:root.add_results()
+                on_release: app.root.current = 'prediect'
+
+
+            Button:
+                text:"Know more about Cervical cancer"
+                background_color: 1, .3, .4, .85
+                font_size: '13dp'
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,200
+                height: 20
+                width: 300
+                on_press:
+                    root.link_()
+
+
+
+
+            Button:
+                #size_hint: .9,.9 #width , hieght
+                text: " Show information "
+                #pos:40 , 80
+                on_release: root.print__()
+                #on_release: app.root.current = 'screen'
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,150
+                height: 20
+                width: 300
+
+            Button:
+                size_hint: .9,.9 #width , hieght
+                id: del_button
+                text: "Delete The Information"
+                background_color: 1, .3, .4, .85
+                canvas.before:
+
+                    Color:
+                        rgb: C('#642a35')
+                    Ellipse:
+                        angle_start:180
+                        angle_end:360
+                        pos:(self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Ellipse:
+                        angle_start:360
+                        angle_end:540
+                        pos: (self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1])
+                        size: (self.size[1], self.size[1])
+                    Color:
+                        rgba: C('#9a4059')
+                    #Line:
+                        #width: .3
+                    Line:
+                        width: .3
+                        points: self.pos[0] , self.pos[1], self.pos[0] + self.size[0], self.pos[1]
+                    Line:
+                        width: .3
+                        points: self.pos[0], self.pos[1] + self.size[1], self.pos[0] + self.size[0], self.pos[1] + self.size[1]
+                    Line:
+                        width: .3
+                        ellipse: self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 180, 360
+                    Line:
+                        width: 1
+                        ellipse: self.size[0] + self.pos[0] - self.size[1]/2.0, self.pos[1], self.size[1], self.size[1], 360, 540
+                size_hint:.6,.5
+                pos:80,100
+                height: 20
+                width: 300
+                on_release:root.delete_button()
+
+####################################
+#############################################################################################
+#################################################################################################################################
